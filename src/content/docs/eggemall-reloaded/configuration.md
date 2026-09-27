@@ -99,7 +99,7 @@ Lore_Lines:
   - '&9Captured by: &e&l{player}'
 ```
 
-Built-in placeholders and, when installed, PlaceholderAPI placeholders can be used here. See [Placeholders](./placeholders/).
+Built-in placeholders and, when installed, PlaceholderAPI placeholders can be used here. See [Placeholders](../placeholders/).
 
 ## Restrictions
 
@@ -169,4 +169,4 @@ The `Messages` section controls capture feedback such as permission errors, rest
 
 Built-in `{entity}` and `{world}` placeholders are available in the applicable messages. PlaceholderAPI `%...%` placeholders are additionally parsed when PlaceholderAPI is installed.
 
-See [Placeholders](./placeholders/) for the complete supported list.
+See [Placeholders](../placeholders/) for the complete supported list.

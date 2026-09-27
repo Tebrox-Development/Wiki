@@ -35,7 +35,7 @@ Imports `plugins/EggEmAll2/settings.yml` into the EggEmAll Reloaded data directo
 
 **Permission:** `eggemall.command.migrate`
 
-See [Migration from EggEmAll2](./migration/) before using it.
+See [Migration from EggEmAll2](../migration/) before using it.
 
 ## Capture permissions
 

@@ -6,28 +6,52 @@ sidebar:
   hidden: true
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+<div class="tebrox-home-hero">
+  <p class="tebrox-eyebrow">TEBROX-DEVELOPMENT</p>
+  <h1>Plugin documentation,<br /><span>in one place.</span></h1>
+  <p class="tebrox-intro">
+    Installation, configuration, integrations, API references, and troubleshooting
+    for Tebrox Development plugins.
+  </p>
+</div>
 
-# Tebrox Development Wiki
+<div class="tebrox-plugin-grid">
+  <a class="tebrox-plugin-card" href="./vertexcore/">
+    <span class="tebrox-plugin-type">Library</span>
+    <div class="tebrox-card-title-row">
+      <h2>VertexCore</h2>
+      <span class="tebrox-status">Stable</span>
+    </div>
+    <p>Shared core functionality and developer APIs used by Tebrox Development plugins.</p>
+    <span class="tebrox-card-link">Open documentation →</span>
+  </a>
 
-Central documentation for all public Tebrox Development plugins.
+  <a class="tebrox-plugin-card" href="./afk-area/">
+    <span class="tebrox-plugin-type">Gameplay</span>
+    <div class="tebrox-card-title-row">
+      <h2>AFK Area</h2>
+      <span class="tebrox-status tebrox-status-coming">Coming soon</span>
+    </div>
+    <p>AFK areas, rewards, integrations, configuration, and server administration.</p>
+    <span class="tebrox-card-link">Open documentation →</span>
+  </a>
 
-<CardGrid>
-  <Card title="VertexCore">
-    Shared core and API documentation for plugins built on VertexCore.
-  </Card>
-  <Card title="AFK Area">
-    Installation, configuration, rewards, integrations, and usage.
-  </Card>
-  <Card title="EggEmAll Reloaded">
-    Installation, configuration, mob catching, permissions, and integrations.
-  </Card>
-</CardGrid>
+  <a class="tebrox-plugin-card" href="./eggemall-reloaded/">
+    <span class="tebrox-plugin-type">Gameplay</span>
+    <div class="tebrox-card-title-row">
+      <h2>EggEmAll Reloaded</h2>
+      <span class="tebrox-status">Stable</span>
+    </div>
+    <p>Mob catching, entity data, permissions, configuration, integrations, and migration.</p>
+    <span class="tebrox-card-link">Open documentation →</span>
+  </a>
+</div>
 
-## Documentation policy
-
-The wiki documents the **current stable version** of each plugin.
-
-When a plugin has a public beta or preview that differs meaningfully from stable, its beta documentation is kept in a clearly separated beta section. Once that version becomes stable, the beta documentation replaces the previous stable documentation.
-
-Breaking upgrades can keep a dedicated migration guide where needed.
+<div class="tebrox-policy">
+  <span class="tebrox-policy-label">Version policy</span>
+  <p>
+    The wiki documents the <strong>current stable version</strong> of each plugin.
+    Separate beta documentation is added only when a public beta differs meaningfully
+    from stable. Breaking upgrades can keep a dedicated migration guide where needed.
+  </p>
+</div>

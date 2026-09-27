@@ -8,11 +8,17 @@ export default defineConfig({
     starlight({
       title: 'Tebrox Development Wiki',
       description: 'Documentation for Tebrox Development plugins.',
+      customCss: ['./src/styles/tebrox.css'],
       social: [
         {
           icon: 'github',
           label: 'Tebrox Development on GitHub',
           href: 'https://github.com/Tebrox-Development',
+        },
+        {
+          icon: 'discord',
+          label: 'Tebrox Development Discord',
+          href: 'https://discord.tebrox-development.de',
         },
       ],
       sidebar: [

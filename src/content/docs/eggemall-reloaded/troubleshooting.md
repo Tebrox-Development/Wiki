@@ -19,7 +19,7 @@ Check the capture conditions in this order:
 6. If `RequirePermissions` is enabled, the player needs a matching category or mob-specific permission.
 7. The configured capture chance still has to succeed.
 
-Relevant settings are documented under [Configuration](./configuration/).
+Relevant settings are documented under [Configuration](../configuration/).
 
 ## Permission denied when catching mobs
 
@@ -46,7 +46,7 @@ or a mob-specific permission such as:
 eggemall.catchmob.cow
 ```
 
-See [Commands & Permissions](./commands-permissions/).
+See [Commands & Permissions](../commands-permissions/).
 
 ## PlaceholderAPI placeholders are not resolving
 
@@ -66,7 +66,7 @@ Standard PlaceholderAPI placeholders use percent signs:
 
 The `%...%` form requires PlaceholderAPI to be installed and available. EggEmAll Reloaded itself does not require PlaceholderAPI.
 
-See [Placeholders](./placeholders/).
+See [Placeholders](../placeholders/).
 
 ## Existing EggEmAll2 settings were not imported automatically
 
@@ -80,7 +80,7 @@ If `plugins/EggEmAll2/settings.yml` exists, use:
 
 The migration process creates a backup and leaves the original EggEmAll2 directory untouched.
 
-See [Migration from EggEmAll2](./migration/).
+See [Migration from EggEmAll2](../migration/).
 
 ## A stacker plugin is installed but capture behavior is unexpected
 

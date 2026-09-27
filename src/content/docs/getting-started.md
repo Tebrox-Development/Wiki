@@ -1,22 +1,20 @@
 ---
 title: Getting Started
-description: General information for installing and maintaining Tebrox Development plugins.
+description: Basic information for Tebrox Development plugins.
 sidebar:
   order: 1
 ---
 
 # Getting Started
 
-Each plugin has its own documentation section, but the basic workflow is the same.
-
-## Choose a plugin
-
-Open the plugin section in the sidebar and start with **Overview** and **Installation**.
+Pick a plugin from the sidebar and start with its **Overview** or **Installation** page.
 
 ## Versions
 
-The main documentation always targets the current stable release. If a beta is documented, it will be clearly marked and separated from stable documentation.
+The main docs cover the current stable release.
+
+If a public beta needs different setup or configuration, it gets its own clearly marked section.
 
 ## Updating
 
-Before updating a plugin, check its migration or upgrade notes when one exists, especially for releases with breaking changes.
+For normal updates, check the plugin's release notes first. If an update needs manual migration, the plugin section will link to a migration guide.

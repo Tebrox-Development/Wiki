@@ -7,48 +7,38 @@ sidebar:
 
 # EggEmAll Reloaded
 
-**EggEmAll Reloaded** lets players capture supported entities by throwing ordinary chicken eggs at them and receive the corresponding spawn egg.
+EggEmAll Reloaded lets players catch supported mobs by throwing normal chicken eggs at them. A successful catch gives the player the matching spawn egg and can keep supported entity data for later.
 
-The current stable release is **3.0.2**.
+Current stable release: **3.0.2**
 
-## Main features
+## Features
 
-- Capture mobs with ordinary chicken eggs
-- Preserve supported entity data
-- Configure capture chance and failure behavior
-- Restrict captures by entity state, world, category, or individual mob
-- Add configurable lore to captured spawn eggs
-- Browse catchable and blacklisted entities in the built-in GUI
-- Optional PlaceholderAPI support
-- Optional RoseStacker and UltimateStacker support
-- Safe migration from existing EggEmAll2 installations
+- catch mobs with normal chicken eggs
+- configurable catch chance
+- keep supported entity data
+- restrictions for babies, tamed mobs, named mobs, sheared sheep, worlds, and individual entity types
+- category and mob-specific permissions
+- configurable spawn-egg lore
+- GUI for catchable and blacklisted entities
+- PlaceholderAPI support
+- RoseStacker and UltimateStacker support
+- migration from EggEmAll2
 
 ## Compatibility
 
-Paper is the primary maintenance target. The current stable version has also been manually validated on supported Spigot runtimes.
+Paper is the main target. The current release has also been tested on supported Spigot versions.
 
-See [Compatibility](./compatibility/) for the currently validated server versions and Java baseline.
-
-## Documentation
-
-- [Installation](./installation/)
-- [Configuration](./configuration/)
-- [Commands & Permissions](./commands-permissions/)
-- [Placeholders](./placeholders/)
-- [Integrations](./integrations/)
-- [Migration from EggEmAll2](./migration/)
-- [Compatibility](./compatibility/)
-- [Troubleshooting](./troubleshooting/)
+See [Compatibility](./compatibility/) for the tested versions and Java details.
 
 ## Maintained fork
 
 EggEmAll Reloaded is a maintained fork of [EggEmAll2](https://github.com/Dirty-Dog-Gaming/EggEmAll2), originally developed by **shadmage / Dirty-Dog-Gaming**.
 
-The maintained fork keeps the existing command, permission, PlaceholderAPI, and configuration conventions compatible where practical while updating the plugin for current server versions.
+Commands, permissions, placeholders, and existing configuration names are kept compatible where possible.
 
 ## Links
 
-- [GitHub repository](https://github.com/Tebrox-Development/EggEmAll-Reloaded)
-- [GitHub releases](https://github.com/Tebrox-Development/EggEmAll-Reloaded/releases)
+- [GitHub](https://github.com/Tebrox-Development/EggEmAll-Reloaded)
+- [Releases](https://github.com/Tebrox-Development/EggEmAll-Reloaded/releases)
 - [SpigotMC](https://www.spigotmc.org/resources/eggemall-reloaded.138577/)
-- [Issue tracker](https://github.com/Tebrox-Development/EggEmAll-Reloaded/issues)
+- [Issues](https://github.com/Tebrox-Development/EggEmAll-Reloaded/issues)

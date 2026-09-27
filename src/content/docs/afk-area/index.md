@@ -7,27 +7,27 @@ sidebar:
 
 # AFK Area
 
-AFK Area provides configurable AFK areas, rewards, persistence, and optional integrations.
+AFK Area handles AFK zones, rewards, statistics, and the related player handling around them.
 
-The current stable release is **1.0.0**.
+Current stable release: **1.0.0**
 
 ## Requirements
 
 - Paper 1.21.4 or newer
 - VertexCore 1.1.0 or newer
 
-## Highlights
+## Features
 
-- Automatic and manual AFK handling
-- Native cuboid and WorldGuard AFK areas
-- Automatic AFK area teleporting
-- Player visibility control with staff bypass
-- Weighted command rewards
-- Interval and milestone reward schedules
-- IP-based reward limiting and household support
-- Persistent AFK session statistics
-- Bossbar and actionbar displays
-- PlaceholderAPI and TAB integration
-- JSON, H2, and MySQL/MariaDB persistence
+- automatic and manual AFK handling
+- native cuboid and WorldGuard regions
+- automatic teleporting into AFK areas
+- player visibility control with staff bypass
+- weighted command rewards
+- interval and milestone reward schedules
+- IP-based reward limits and household support
+- persistent AFK session statistics
+- bossbar and actionbar displays
+- PlaceholderAPI and TAB support
+- JSON, H2, and MySQL/MariaDB storage
 
-The remaining AFK Area documentation will be migrated into the same shared wiki structure used by the other plugins.
+More AFK Area pages will be added here as the existing documentation is moved into the shared wiki.

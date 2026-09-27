@@ -7,8 +7,8 @@ sidebar:
 
 # VertexCore
 
-VertexCore provides shared functionality and APIs used by Tebrox Development plugins.
+VertexCore is the shared core used by Tebrox Development plugins.
 
-This section is the central reference for installation, configuration, integrations, and developer-facing APIs.
+It provides reusable APIs and services so plugins do not have to implement the same systems again.
 
-The main documentation follows the current stable release. Separate preview documentation is only added when a public beta needs it.
+This section will cover installation, configuration, integrations, and the public developer API. The main docs follow the current stable release.

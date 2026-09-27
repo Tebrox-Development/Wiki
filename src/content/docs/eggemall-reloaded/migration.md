@@ -1,35 +1,29 @@
 ---
 title: Migration from EggEmAll2
-description: Safely migrate an existing EggEmAll2 installation to EggEmAll Reloaded.
+description: Move an existing EggEmAll2 setup to EggEmAll Reloaded.
 sidebar:
   order: 7
 ---
 
 # Migration from EggEmAll2
 
-EggEmAll Reloaded uses a new plugin name and therefore its own plugin data directory.
+EggEmAll Reloaded uses its own plugin folder:
 
-Existing command aliases, permission nodes, and the `eggemall` PlaceholderAPI namespace are intentionally retained for compatibility.
+```text
+plugins/EggEmAllReloaded/
+```
 
-## Before migrating
-
-Back up both plugin data directories and your server before changing the installation.
-
-The legacy configuration is expected at:
+The old EggEmAll2 config stays at:
 
 ```text
 plugins/EggEmAll2/settings.yml
 ```
 
-EggEmAll Reloaded stores its own configuration under:
+Back up both folders before migrating.
 
-```text
-plugins/EggEmAllReloaded/settings.yml
-```
+## Run the migration
 
-## Migration process
-
-When EggEmAll Reloaded detects an existing legacy `settings.yml`, it reports this on startup.
+If the old config is found, EggEmAll Reloaded reports it during startup.
 
 Run:
 
@@ -37,31 +31,31 @@ Run:
 /eggemall migrate
 ```
 
-The migration process:
+The command:
 
-1. creates a backup of the current Reloaded `settings.yml`
-2. imports the legacy EggEmAll2 settings
-3. leaves the original EggEmAll2 directory untouched
-4. reloads the imported configuration
-5. marks a successful migration so the legacy file is not imported again accidentally
+1. backs up the current Reloaded `settings.yml`
+2. imports the EggEmAll2 settings
+3. leaves the old EggEmAll2 folder untouched
+4. reloads the imported config
+5. records the completed migration so it is not run again by accident
 
-Legacy default `[EggEmAll]` log and chat prefixes are updated to `[EggEmAll Reloaded]`. Custom prefixes are preserved.
+The default `[EggEmAll]` prefixes are renamed to `[EggEmAll Reloaded]`. Custom prefixes are left alone.
 
-## After migrating
+## After migration
 
-Verify the important configuration sections before allowing normal gameplay again:
+Check the important settings before reopening the server:
 
-- world blacklist/whitelist behavior
-- capture chance
+- worlds
+- catch chance
 - entity blacklist
-- capture restrictions
+- restrictions
 - permissions
 - lore and messages
 
-Once the Reloaded installation is working correctly, the old EggEmAll2 plugin JAR should no longer be loaded alongside it.
+Do not keep both plugin JARs active after the migration.
 
-## Existing captured eggs
+## Old captured eggs
 
-Compatibility support for legacy EggEmAll2 captured eggs is retained where the current server can parse the stored snapshot data.
+Legacy EggEmAll2 eggs are still supported when the current server can read their stored entity snapshot data.
 
-Newly captured eggs use the server's native entity snapshot support where available when `NBT.MaintainEntityDataValues` is enabled.
+New captured eggs use the server's native entity snapshot support where available when `NBT.MaintainEntityDataValues` is enabled.

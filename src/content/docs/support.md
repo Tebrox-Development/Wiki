@@ -1,20 +1,18 @@
 ---
 title: Support
-description: Where to get help with Tebrox Development plugins.
+description: Get help with Tebrox Development plugins.
 sidebar:
   order: 99
 ---
 
 # Support
 
-When asking for help, include enough information to reproduce the problem.
+If something is not working, include the details that help reproduce it:
 
-Useful details usually include:
+- server software and version
+- plugin version
+- relevant configuration
+- full error or stack trace
+- steps to reproduce the problem
 
-- Minecraft and server software version
-- Plugin version
-- Relevant configuration
-- Full error message or stack trace
-- Steps that reproduce the issue
-
-Plugin-specific troubleshooting notes are kept in each plugin section.
+Check the plugin's **Troubleshooting** page first when one is available.

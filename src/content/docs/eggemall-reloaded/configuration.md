@@ -1,34 +1,32 @@
 ---
 title: Configuration
-description: Configure EggEmAll Reloaded using settings.yml.
+description: EggEmAll Reloaded settings.yml reference.
 sidebar:
   order: 3
 ---
 
 # Configuration
 
-The main configuration file is:
+The main config is:
 
 ```text
 plugins/EggEmAllReloaded/settings.yml
 ```
 
-After changing settings, use `/eggemall reload` or restart the server.
+After editing it, run `/eggemall reload` or restart the server.
 
-## General plugin settings
+## General
 
-| Option | Default | Description |
+| Option | Default | What it does |
 | --- | --- | --- |
-| `LogPrefix` | `&8[&aEggEmAll Reloaded&8]` | Prefix used for plugin log output. |
-| `ChatPrefix` | `&8[&aEggEmAll Reloaded&8]` | Prefix used for plugin chat output. |
-| `Log_Lag_Over_Millis` | `100` | Framework logging threshold for slow operations. |
-| `Debug` | `[]` | Debug sections enabled for additional logging. |
-| `Command_Aliases` | `[eggemall]` | Registered aliases for the main command. |
-| `General.StartupConsoleStats` | `true` | Show plugin details in the console on startup or reload. |
+| `LogPrefix` | `&8[&aEggEmAll Reloaded&8]` | Prefix used in console output. |
+| `ChatPrefix` | `&8[&aEggEmAll Reloaded&8]` | Prefix used in chat messages. |
+| `Log_Lag_Over_Millis` | `100` | Framework threshold for slow-operation logging. |
+| `Debug` | `[]` | Enables additional debug sections. |
+| `Command_Aliases` | `[eggemall]` | Aliases for the main command. |
+| `General.StartupConsoleStats` | `true` | Prints plugin details on startup and reload. |
 
 ## Worlds
-
-`BlacklistWorlds` controls where entity catching is allowed.
 
 ```yaml
 BlacklistWorlds:
@@ -37,29 +35,22 @@ BlacklistWorlds:
     - blacklisted_world
 ```
 
-### `BlacklistWorlds.AsWhitelist`
+With `AsWhitelist: false`, the listed worlds are blocked.
 
-**Type:** `boolean`  
-**Default:** `false`
+With `AsWhitelist: true`, catching is only allowed in the listed worlds.
 
-When `false`, listed worlds are blocked. When `true`, the list is treated as a whitelist and catching is allowed only in the listed worlds.
-
-### `BlacklistWorlds.Worlds`
-
-**Type:** list of world names
-
-Add the exact server world names that should participate in the blacklist or whitelist.
+Use the exact world names from the server.
 
 ## Particles
 
-| Option | Default | Description |
+| Option | Default | What it does |
 | --- | --- | --- |
-| `Particles.EggTrails` | `true` | Show the configured egg trail effect. |
-| `Particles.PlayerThrowOnly` | `true` | Restrict the relevant particle behavior to player-thrown eggs. |
-| `Particles.ExplosionOnSuccess` | `true` | Show an effect when a capture succeeds. |
-| `Particles.SmokeOnEscape` | `true` | Show smoke when a failed capture removes the entity. |
+| `Particles.EggTrails` | `true` | Shows the egg trail effect. |
+| `Particles.PlayerThrowOnly` | `true` | Limits the relevant effect to player-thrown eggs. |
+| `Particles.ExplosionOnSuccess` | `true` | Shows an effect after a successful catch. |
+| `Particles.SmokeOnEscape` | `true` | Shows smoke when a failed catch removes the target. |
 
-## Capture chance
+## Catch chance
 
 ```yaml
 CatchChance:
@@ -69,29 +60,23 @@ CatchChance:
   AddLoreToSpawnEgg: true
 ```
 
-### `CatchChance.ChancePercentage`
+### `ChancePercentage`
 
-**Type:** percentage  
+Chance for a valid catch to succeed.
+
 **Default:** `100`
 
-Controls the chance that an otherwise valid capture succeeds.
+### Failed catches
 
-### Failure behavior
+- `SpawnChickenOnFail` allows the normal chicken-spawn behavior after a failed throw.
+- `RemoveEntityOnFail` removes the target when the catch roll fails.
+- `Particles.SmokeOnEscape` controls the smoke effect used with entity removal.
 
-- `SpawnChickenOnFail: true` allows the normal egg failure path to spawn a chicken.
-- `RemoveEntityOnFail: true` removes the target entity when the capture chance fails.
-- `Particles.SmokeOnEscape` applies when entity removal on failure is enabled.
+### Spawn egg lore
 
-### `CatchChance.AddLoreToSpawnEgg`
+`AddLoreToSpawnEgg` adds the configured lore when a player catches an entity.
 
-**Type:** `boolean`  
-**Default:** `true`
-
-Adds configured lore to the captured spawn egg when the egg was thrown by a player.
-
-### `CatchChance.Lore_Lines`
-
-Default:
+Default lore:
 
 ```yaml
 Lore_Lines:
@@ -99,24 +84,24 @@ Lore_Lines:
   - '&9Captured by: &e&l{player}'
 ```
 
-Built-in placeholders and, when installed, PlaceholderAPI placeholders can be used here. See [Placeholders](../placeholders/).
+Built-in placeholders and PlaceholderAPI placeholders can be used here. See [Placeholders](../placeholders/).
 
 ## Restrictions
 
-| Option | Default | Description |
+| Option | Default | What it does |
 | --- | --- | --- |
-| `OnlyAllowPlayerThrownEggs` | `true` | Only player-thrown chicken eggs can trigger captures. |
-| `PreventCatchingBabyEntities` | `true` | Prevent catching baby entities. |
-| `PreventCatchingTamedEntities` | `true` | Prevent catching tamed entities. |
-| `PreventCatchingShearedSheep` | `true` | Prevent catching sheared sheep. |
-| `PreventCatchingNamedEntities` | `true` | Prevent catching entities with custom names. |
-| `RequirePermissions` | `true` | Require category or mob-specific capture permissions. |
+| `OnlyAllowPlayerThrownEggs` | `true` | Only eggs thrown by players can catch mobs. |
+| `PreventCatchingBabyEntities` | `true` | Blocks baby mobs. |
+| `PreventCatchingTamedEntities` | `true` | Blocks tamed mobs. |
+| `PreventCatchingShearedSheep` | `true` | Blocks sheared sheep. |
+| `PreventCatchingNamedEntities` | `true` | Blocks mobs with custom names. |
+| `RequirePermissions` | `true` | Requires category or mob-specific catch permissions. |
 
 ### Entity blacklist
 
-Only entities that have a valid spawn egg can be captured at all. `Restrictions.EntityBlacklist` adds an additional configurable block list.
+Only entities with a valid spawn egg can be caught. `EntityBlacklist` can block additional entity types.
 
-Default entries include:
+Default:
 
 ```yaml
 EntityBlacklist:
@@ -136,21 +121,19 @@ EntityBlacklist:
 
 ### `EntityInventories.DeleteInventoryOnCatch`
 
-**Type:** `boolean`  
-**Default:** `true`
+Controls inventory handling for supported entities when they are caught.
 
-Controls inventory handling for supported entities during capture.
+**Default:** `true`
 
 ## Entity data
 
 ### `NBT.MaintainEntityDataValues`
 
-**Type:** `boolean`  
+Keeps supported entity data on captured spawn eggs.
+
 **Default:** `true`
 
-Preserves supported entity data when creating captured spawn eggs.
-
-Current versions use the server's native entity snapshot support for newly created captured eggs where available, while retaining compatibility with legacy EggEmAll2 egg data.
+New eggs use the server's native entity snapshot support where available. Legacy EggEmAll2 egg data is still read for compatibility.
 
 ## GUI
 
@@ -161,12 +144,12 @@ GUI:
   BlacklistedEntitiesTitle: "&c&l&oBlacklisted Entities"
 ```
 
-These values control the titles shown by the built-in entity browser GUI.
+These values set the titles used by the built-in GUI.
 
 ## Messages
 
-The `Messages` section controls capture feedback such as permission errors, restrictions, failed chance rolls, and successful captures.
+The `Messages` section contains the text shown for successful catches, failed catches, restrictions, and permission errors.
 
-Built-in `{entity}` and `{world}` placeholders are available in the applicable messages. PlaceholderAPI `%...%` placeholders are additionally parsed when PlaceholderAPI is installed.
+Built-in placeholders such as `{entity}` and `{world}` work in the supported messages. PlaceholderAPI placeholders are parsed when PlaceholderAPI is installed.
 
-See [Placeholders](../placeholders/) for the complete supported list.
+See [Placeholders](../placeholders/).

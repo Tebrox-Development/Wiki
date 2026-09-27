@@ -1,38 +1,36 @@
 ---
 title: Troubleshooting
-description: Common EggEmAll Reloaded configuration and gameplay issues.
+description: Common EggEmAll Reloaded problems.
 sidebar:
   order: 90
 ---
 
 # Troubleshooting
 
-## An entity cannot be caught
+## A mob cannot be caught
 
-Check the capture conditions in this order:
+Check these first:
 
-1. The entity must have a valid spawn egg.
-2. The entity must not be listed under `Restrictions.EntityBlacklist`.
-3. The current world must be allowed by `BlacklistWorlds`.
-4. Entity-state restrictions must allow the target.
-5. If `OnlyAllowPlayerThrownEggs` is enabled, the egg must have been thrown by a player.
-6. If `RequirePermissions` is enabled, the player needs a matching category or mob-specific permission.
-7. The configured capture chance still has to succeed.
+1. The mob has a valid spawn egg.
+2. It is not in `Restrictions.EntityBlacklist`.
+3. The current world is allowed.
+4. Baby/tamed/named/sheared restrictions do not block it.
+5. If `OnlyAllowPlayerThrownEggs` is enabled, a player threw the egg.
+6. If `RequirePermissions` is enabled, the player has a matching permission.
+7. The catch chance succeeded.
 
-Relevant settings are documented under [Configuration](../configuration/).
+See [Configuration](../configuration/).
 
-## Permission denied when catching mobs
+## The player gets a permission message
 
-If:
+With:
 
 ```yaml
 Restrictions:
   RequirePermissions: true
 ```
 
-players need a matching capture permission.
-
-You can grant category permissions such as:
+the player needs either a category permission:
 
 ```text
 eggemall.passive
@@ -40,7 +38,7 @@ eggemall.aggressive
 eggemall.villagers
 ```
 
-or a mob-specific permission such as:
+or a mob-specific permission:
 
 ```text
 eggemall.catchmob.cow
@@ -48,9 +46,9 @@ eggemall.catchmob.cow
 
 See [Commands & Permissions](../commands-permissions/).
 
-## PlaceholderAPI placeholders are not resolving
+## PlaceholderAPI placeholders stay unchanged
 
-Built-in EggEmAll placeholders use braces, for example:
+Built-in placeholders use braces:
 
 ```text
 {player}
@@ -58,53 +56,55 @@ Built-in EggEmAll placeholders use braces, for example:
 {world}
 ```
 
-Standard PlaceholderAPI placeholders use percent signs:
+PlaceholderAPI uses percent signs:
 
 ```text
 %player_name%
 ```
 
-The `%...%` form requires PlaceholderAPI to be installed and available. EggEmAll Reloaded itself does not require PlaceholderAPI.
+The second form only works when PlaceholderAPI is installed.
 
 See [Placeholders](../placeholders/).
 
-## Existing EggEmAll2 settings were not imported automatically
+## My EggEmAll2 config was not imported
 
-Legacy settings are not silently overwritten into the Reloaded directory.
+The old config is not copied automatically.
 
-If `plugins/EggEmAll2/settings.yml` exists, use:
+If this file exists:
+
+```text
+plugins/EggEmAll2/settings.yml
+```
+
+run:
 
 ```text
 /eggemall migrate
 ```
 
-The migration process creates a backup and leaves the original EggEmAll2 directory untouched.
-
 See [Migration from EggEmAll2](../migration/).
 
-## A stacker plugin is installed but capture behavior is unexpected
+## Problems with RoseStacker or UltimateStacker
 
-EggEmAll Reloaded integrates optionally with RoseStacker and UltimateStacker.
+Update EggEmAll Reloaded and the stacker plugin first, then test again.
 
-Make sure the installed stacker version is compatible with the server version and test the behavior with the latest stable EggEmAll Reloaded release.
+The stacker integrations are optional. A missing integration should not stop EggEmAll Reloaded from loading.
 
-A missing or incompatible optional integration should not prevent EggEmAll Reloaded itself from starting.
+## Old captured eggs behave differently
 
-## Previously captured legacy eggs behave differently
+EggEmAll2 stored entity data differently from new Reloaded eggs.
 
-Legacy EggEmAll2 eggs store entity snapshot data differently from newly captured Reloaded eggs.
-
-EggEmAll Reloaded retains a legacy reader, but restoration still depends on whether the current server can parse the stored legacy snapshot data.
+The legacy reader is still included, but restoration depends on whether the current server can parse the old snapshot data.
 
 ## Reporting a bug
 
-When opening an issue, include:
+Include:
 
 - server software and version
 - EggEmAll Reloaded version
-- relevant `settings.yml` sections
-- installed optional integrations
-- complete error or stack trace if one exists
-- clear reproduction steps
+- relevant config
+- installed integrations
+- full error or stack trace
+- steps to reproduce it
 
-Use the [GitHub issue tracker](https://github.com/Tebrox-Development/EggEmAll-Reloaded/issues).
+Report bugs on the [GitHub issue tracker](https://github.com/Tebrox-Development/EggEmAll-Reloaded/issues).

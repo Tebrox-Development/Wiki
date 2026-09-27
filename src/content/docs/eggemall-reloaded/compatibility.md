@@ -1,70 +1,46 @@
 ---
 title: Compatibility
-description: Supported and validated server versions for EggEmAll Reloaded.
+description: Tested server and Java versions for EggEmAll Reloaded.
 sidebar:
   order: 8
 ---
 
 # Compatibility
 
-EggEmAll Reloaded is maintained with current Paper support as the primary target while avoiding unnecessary runtime requirements.
+Current stable release: **3.0.2**
 
-## Current stable release
+Paper is the main target, but the same JAR has also been tested on current Spigot versions.
 
-The current stable release is **3.0.2**.
+## Tested versions
+
+| Runtime | Status |
+| --- | --- |
+| Paper 26.2 build 121 | Primary target; build, startup smoke, and manual tests passed |
+| Paper 1.21.7 | Build/API check and manual tests passed |
+| Spigot 26.2 | Manual tests passed |
+| Spigot 1.21.7 | Manual tests passed |
+| Older than 1.21 | Not a maintenance target |
+
+Manual testing covered catching, restoring spawn eggs, entity data, permissions, world restrictions, catch restrictions, and catch chance behavior.
 
 ## Java
 
-The project is built with **JDK 25** because the current Paper API uses the current Java generation.
+The project is built with **JDK 25**.
 
-The plugin itself is compiled with `--release 17` where the dependency and API surface permit it, keeping the plugin's own classes at Java 17 bytecode compatibility.
+Plugin classes are compiled with `--release 17` where the API and dependencies allow it.
 
-## Validated server software
+## Stacker plugins
 
-| Runtime | Validation status |
-| --- | --- |
-| Paper 26.2 build 121 | Primary target; compile/API verification, automated startup smoke, and manual functional validation passed. |
-| Paper 1.21.7 | Backward-compatibility compile/API verification and manual functional validation passed. |
-| Spigot 26.2 | Manual functional validation passed. |
-| Spigot 1.21.7 | Manual functional validation passed. |
-| Older than 1.21 | Not a maintenance target unless compatibility comes without additional maintenance cost. |
-
-The same EggEmAll Reloaded JAR was manually validated across the tested Paper and Spigot runtimes.
-
-Functional validation covered:
-
-- core capture flow
-- spawn-egg restoration
-- entity-data preservation
-- permissions
-- world restrictions
-- capture restrictions
-- chance handling
-
-## Stacker integrations
-
-RoseStacker and UltimateStacker were also exercised during runtime testing.
-
-For both integrations, capturing from a stack reduced the remaining stack by exactly one while producing one captured entity egg.
+RoseStacker and UltimateStacker have both been tested with stacked entities. Catching one entity removes exactly one entity from the stack.
 
 ## EggEmAll2 compatibility
 
-The following compatibility surfaces are intentionally retained:
+The following are kept for existing setups:
 
-- `/eggemall` command
-- `eggemall.*` permission nodes
-- `%eggemall_...%` PlaceholderAPI namespace
-- existing configuration conventions
-- legacy captured egg reader
+- `/eggemall`
+- `eggemall.*` permissions
+- `%eggemall_...%` placeholders
+- existing config names
+- legacy captured egg data
 
-The plugin descriptor also declares EggEmAll Reloaded as providing `EggEmAll2` where supported by the server.
-
-## Compatibility policy
-
-The maintenance rules are:
-
-1. keep existing configuration keys and defaults unless migration is necessary
-2. keep existing commands, placeholder identifiers, and permission nodes unless correctness or security requires a change
-3. prefer isolated compatibility adapters over unnecessarily raising the minimum server version
-4. avoid fragile emulation of removed server behavior
-5. keep optional integrations optional
+EggEmAll Reloaded also declares `EggEmAll2` as a provided plugin name on servers that support it.

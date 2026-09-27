@@ -7,36 +7,26 @@ sidebar:
 
 # Installation
 
-## Requirements
+Current stable release: **3.0.2**
 
-EggEmAll Reloaded is distributed as a normal server plugin.
-
-The current stable release is **3.0.2**. Paper is the primary target, with current Spigot versions also manually validated.
-
-For the exact tested versions, see [Compatibility](../compatibility/).
+For tested server versions and Java details, see [Compatibility](../compatibility/).
 
 ## Install
 
-1. Download the latest stable JAR from [GitHub Releases](https://github.com/Tebrox-Development/EggEmAll-Reloaded/releases/latest) or [SpigotMC](https://www.spigotmc.org/resources/eggemall-reloaded.138577/).
-2. Place the JAR in the server's `plugins` directory.
+1. Download the latest JAR from [GitHub Releases](https://github.com/Tebrox-Development/EggEmAll-Reloaded/releases/latest) or [SpigotMC](https://www.spigotmc.org/resources/eggemall-reloaded.138577/).
+2. Put the JAR in the server's `plugins` folder.
 3. Start or restart the server.
-4. Edit `plugins/EggEmAllReloaded/settings.yml` as needed.
-5. Restart the server or use `/eggemall reload` after configuration changes.
+4. Edit `plugins/EggEmAllReloaded/settings.yml` if needed.
+5. Use `/eggemall reload` after config changes, or restart the server.
 
-## Updating EggEmAll Reloaded
+## Updating
 
-For normal updates:
+Stop the server, replace the old JAR, and start the server again.
 
-1. Stop the server.
-2. Replace the existing EggEmAll Reloaded JAR.
-3. Start the server again.
+Existing configs and captured eggs are kept compatible across normal maintenance updates.
 
-Existing configuration files and previously captured eggs are intended to remain compatible across maintenance updates.
+## Moving from EggEmAll2
 
-## Upgrading from EggEmAll2
+EggEmAll Reloaded uses a separate data folder. Do not copy the old folder over the new one manually.
 
-Do not manually overwrite the old EggEmAll2 data directory.
-
-EggEmAll Reloaded uses its own plugin data directory and includes a migration command for the legacy `settings.yml`.
-
-Follow [Migration from EggEmAll2](../migration/) before removing the old installation.
+Use the built-in migration command instead. See [Migration from EggEmAll2](../migration/).

@@ -15,7 +15,7 @@ PlaceholderAPI adds support for standard `%...%` placeholders in supported EggEm
 
 EggEmAll Reloaded also exposes its own `%eggemall_...%` placeholders.
 
-See [Placeholders](./placeholders/) for the complete list.
+See [Placeholders](../placeholders/) for the complete list.
 
 ## RoseStacker
 

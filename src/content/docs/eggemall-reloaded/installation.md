@@ -13,7 +13,7 @@ EggEmAll Reloaded is distributed as a normal server plugin.
 
 The current stable release is **3.0.2**. Paper is the primary target, with current Spigot versions also manually validated.
 
-For the exact tested versions, see [Compatibility](./compatibility/).
+For the exact tested versions, see [Compatibility](../compatibility/).
 
 ## Install
 
@@ -39,4 +39,4 @@ Do not manually overwrite the old EggEmAll2 data directory.
 
 EggEmAll Reloaded uses its own plugin data directory and includes a migration command for the legacy `settings.yml`.
 
-Follow [Migration from EggEmAll2](./migration/) before removing the old installation.
+Follow [Migration from EggEmAll2](../migration/) before removing the old installation.
